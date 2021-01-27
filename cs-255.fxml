@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?scenebuilder-background-color 0x0066ffff?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="832.0" scaleShape="false" style="-fx-background-color: #c4bfbe;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+  <children>
+    <ImageView id="x_view" fx:id="imageViewer" fitHeight="480.0" fitWidth="460.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+    <Label layoutX="479.0" layoutY="47.0" prefWidth="106.0" text="X-slider" fx:id="xLabel" />
+    <Slider fx:id="ySlider" layoutX="481.0" layoutY="172.0" max="112.0" prefHeight="38.0" prefWidth="328.0" showTickLabels="true" showTickMarks="true" />
+    <Button layoutX="476.0" layoutY="109.0" mnemonicParsing="false" onAction="#handleButtonClick_X" text="MIP X" fx:id="xButton" />
+    <Label layoutX="480.0" layoutY="149.0" prefWidth="106.0" text="Y-slider" />
+      <Button fx:id="yButton" layoutX="480.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleButtonClick_Y" text="MIP Y" />
+    <Slider layoutX="480.0" layoutY="67.0" max="255.0" prefHeight="38.0" prefWidth="347.0" showTickLabels="true" showTickMarks="true" fx:id="xSlider" />
+    <Slider id="" fx:id="zSlider" layoutX="486.0" layoutY="283.0" max="255.0" prefHeight="38.0" prefWidth="328.0" showTickLabels="true" showTickMarks="true" />
+    <Button fx:id="zButton" layoutX="482.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleButtonClick_Z" text="MIP Z" />
+      <Label layoutX="485.0" layoutY="365.0" text="Image resize:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="479.0" layoutY="17.0" text="Image View selection:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Slider fx:id="Xresize" layoutX="485.0" layoutY="413.0" majorTickUnit="10.0" prefHeight="38.0" prefWidth="258.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Label layoutX="749.0" layoutY="432.0" text="\%">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="486.0" layoutY="251.0" text="Z-Slider" />
+      <Label layoutX="486.0" layoutY="393.0" text="X-axis" />
+      <Label layoutX="486.0" layoutY="447.0" text="Y-axis" />
+      <Slider fx:id="Yresize" layoutX="487.0" layoutY="470.0" majorTickUnit="10.0" prefHeight="38.0" prefWidth="258.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Label layoutX="748.0" layoutY="490.0" text="\%">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="toggleResize" layoutX="613.0" layoutY="392.0" mnemonicParsing="false" onAction="#onClickResize" prefHeight="17.0" prefWidth="121.0" text="Bilinear Resizing" />
+      <MenuButton fx:id="SelectionView" layoutX="15.0" layoutY="486.0" mnemonicParsing="false" text="View selection">
+         <items>
+            <MenuItem fx:id="TopView" mnemonicParsing="false" onAction="#TopClick" text="Top-Down view" />
+            <MenuItem fx:id="FrontView" mnemonicParsing="false" onAction="#FrontClick" text="Front to back view" />
+            <MenuItem fx:id="SideView" mnemonicParsing="false" onAction="#SideClick" text="Side to side" />
+         </items>
+      </MenuButton>
+      <ScrollPane fx:id="ScrollPaneBox" layoutX="5.0" layoutY="516.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="820.0" vbarPolicy="NEVER">
+         <content>
+            <HBox fx:id="HBoxPane" prefHeight="112.0" prefWidth="851.0" />
+         </content>
+      </ScrollPane>
+  </children>
+</AnchorPane>
